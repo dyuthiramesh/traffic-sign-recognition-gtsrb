@@ -59,11 +59,43 @@ pip install -r requirements.txt
    - A CNN architecture with residual connections, addressing the vanishing gradient problem in deeper networks. It consists of several residual blocks, each containing convolutional layers with identity shortcuts.
    ![ResNet-18 Architecture](images/resnet18.png)
 
-## Results and Discussion
+### Results Analysis
 
-- Evaluate the performance of each model architecture on the traffic sign recognition task.
-- Discuss the trade-offs between accuracy and computational efficiency for each architecture.
-- Provide insights into the suitability of each architecture for real-world applications.
+- In all cases, the models were trained using the Adam optimizer with a learning rate of 0.001 for 30 epochs on Google Colab.
+
+- **LeNet-5**:
+  - Accuracy: 87.80%
+  - Trainable Parameters: 0.34 M
+  - FLOPs: 3.91 M
+  - Discussion: LeNet-5 demonstrated competitive performance with a relatively simple architecture, making it suitable for resource-constrained environments.
+
+- **AlexNet**:
+  - Accuracy: 77.98%
+  - Trainable Parameters: 57.1 M
+  - FLOPs: 764 M
+  - Discussion: Despite its deeper architecture, AlexNet exhibited lower accuracy, possibly due to overfitting or optimization hyperparameters.
+
+- **VGG-16**:
+  - Accuracy: 95.4%
+  - Trainable Parameters: 4.5 M
+  - FLOPs: 16 G
+  - Discussion: VGG-16 demonstrated the highest accuracy, indicating its effectiveness in capturing complex features but at the cost of increased computational resources.
+
+- **ResNet-18**:
+  - Accuracy: 95.39%
+  - Trainable Parameters: 11 M
+  - FLOPs: 2 G
+  - Discussion: ResNet-18 achieved competitive accuracy with moderate computational resources, thanks to its residual connections.
+
+- Overall, VGG-16 and ResNet-18 outperformed LeNet-5 and AlexNet in terms of accuracy. However, they require significantly more computational resources.
+
+### Conclusion
+
+In conclusion, the choice of CNN architecture for traffic sign recognition depends on a trade-off between accuracy and computational efficiency. While LeNet-5 and AlexNet are suitable for resource-constrained environments, VGG-16 and ResNet-18 offer higher accuracy at the cost of increased computational resources.
+
+For scenarios prioritizing accuracy without significant constraints on computational resources, VGG-16 or ResNet-18 are preferred choices. Alternatively, for applications where computational efficiency is paramount, simpler architectures like LeNet-5 or possibly modified versions of AlexNet could be considered.
+
+The evaluation highlights the importance of selecting an appropriate CNN architecture based on the specific requirements and constraints of the task.
 
 ## License
 
